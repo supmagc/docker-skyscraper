@@ -8,7 +8,7 @@ RUN mkdir skysource && \
 
 FROM debian:10
 
-RUN apt-get update && apt-get install -y libqt5gui5 libqt5xml5
+RUN apt-get update && apt-get install -y libqt5gui5 libqt5xml5 ca-certificates openssl
 
 ADD artwork.default.xml config.default.ini startup.sh /skyscraper/
 COPY --from=builder /skysource /skysource/
